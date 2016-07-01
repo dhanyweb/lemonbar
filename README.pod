@@ -8,6 +8,10 @@ lemonbar - Featherweight lemon-scented bar
 
 I<lemonbar> [-h | -g I<width>B<x>I<height>B<+>I<x>B<+>I<y> | -b | -d | -f I<font> | -p | -n I<name> | -u I<pixel> | -B I<color> | -F I<color> | -U I<color> | -o I<offset> ]
 
+=head1 INSTALLATION
+
+Run make to compile and use lemonbar
+
 =head1 DESCRIPTION
 
 B<lemonbar> (formerly known as B<bar>) is a lightweight bar entirely based on XCB. Provides full UTF-8 support, basic formatting, RandR and Xinerama support and EWMH compliance without wasting your precious memory.
