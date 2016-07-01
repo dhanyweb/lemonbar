@@ -86,7 +86,7 @@ enum {
     GC_MAX
 };
 
-#define MAX_FONT_COUNT 5
+#define MAX_FONT_COUNT 10
 
 static Display *dpy;
 static xcb_connection_t *c;
@@ -1420,8 +1420,8 @@ main (int argc, char **argv)
     dugc = ugc = fgc;
 
     // A safe default
-    areas = 10;
-    wm_name = NULL;
+    areas = 100;
+    wm_name = "Geometrum's_lemonbar";
 
     // Connect to the Xserver and initialize scr
     xconn();
