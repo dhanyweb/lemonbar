@@ -8,7 +8,7 @@ endif
 
 CC	?= gcc
 CFLAGS += -Wall -std=c99 -Os -DVERSION="\"$(VERSION)\""
-CPPFLAGS +="-I/usr/include/freetype$(FREETYPE_VERSION)/" \
+CPPFLAGS += pkg-config --cflags x11 xft
 LDFLAGS += -lxcb -lxcb-xinerama -lxcb-randr -lX11 -lX11-xcb -lXft -lfreetype -lz -lfontconfig
 CFDEBUG = -g3 -pedantic -Wall -Wunused-parameter -Wlong-long \
           -Wsign-conversion -Wconversion -Wimplicit-function-declaration
@@ -26,7 +26,7 @@ doc: README.pod
 	pod2man --section=1 --center="lemonbar Manual" --name "lemonbar" --release="lemonbar $(VERSION)" README.pod > lemonbar.1
 
 .c.o:
-	${CC} ${CFLAGS} -o $@ -c $<
+	${CC} ${CFLAGS} ${CPPFLAGS} -o $@ -c $<
 
 ${EXEC}: ${OBJS}
 	${CC} -o ${EXEC} ${OBJS} ${LDFLAGS}
